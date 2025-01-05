@@ -46,6 +46,7 @@ function AppRouter() {
             <Route path="dashen" element={<Dashen />} />
             <Route path="dasheninfo" element={<DashenInfo />} />
             <Route path="personal" element={<Personal />} />
+            <Route path="message" element={<Message />} />
           </Route>
         </Route>
 
@@ -53,7 +54,6 @@ function AppRouter() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/chat" element={<Chat />} />
-        <Route path="message" element={<Message />} />
 
         {/* 404 路由 */}
         <Route path="*" element={<NotFound />} />

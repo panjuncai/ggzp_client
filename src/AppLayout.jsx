@@ -30,7 +30,7 @@ const Bottom = () => {
       icon: <UnorderedListOutline />,
     },
     {
-      key: "/chat",
+      key: "/message",
       title: "消息",
       icon: <MessageOutline />,
     },

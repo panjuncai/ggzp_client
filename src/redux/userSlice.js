@@ -180,7 +180,6 @@ export const userSlice = createSlice({
   },
 });
 
-export const { authFail, resetStatus, logout } = userSlice.actions;
 
 export const registerUser = (user) => async (dispatch) => {
   try {
@@ -305,4 +304,5 @@ export const processQueryUser = createAsyncThunk(
   }
 );
 
+export const { authFail, resetStatus, logout } = userSlice.actions;
 export default userSlice.reducer;

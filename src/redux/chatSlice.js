@@ -30,8 +30,8 @@ export const chatSlice = createSlice({
       .addCase(processQueryChatMsgs.fulfilled, (state, action) => {
         if (action.payload.code === 0) {
         // console.log(`processQueryChatMsgs action ${JSON.stringify(action.payload)}`)
-          state.chat.chatMsgs = action.payload.chatMsgs??state.chat.chatMsgs;
-          state.chat.users = action.payload.users??state.chat.users;
+          state.chat.chatMsgs = action.payload.data.chatMsgs??state.chat.chatMsgs;
+          state.chat.users = action.payload.data.users??state.chat.users;
           state.unReadCount = state.chat.chatMsgs.reduce((preTotal, msg) => {
             return preTotal + (!msg.read && msg.to === userid);
           }, 0);
@@ -65,4 +65,5 @@ export const processQueryChatMsgs = createAsyncThunk(
   }
 );
 
+export const{resetStatus} = chatSlice.actions
 export default chatSlice.reducer
