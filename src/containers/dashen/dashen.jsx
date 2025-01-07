@@ -6,6 +6,7 @@ import { processQueryChatMsgs, resetStatus } from "../../redux/chatSlice";
 import Cookies from 'js-cookie'
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { processQueryUser } from "../../redux/userSlice";
 
 export default () => {
   const [dashens, setDashens] = useState([]);
@@ -78,6 +79,7 @@ export default () => {
             icon={<Avatar src={`/assets/images/${i.header}.png`} />}
             title={i.username}
             style={{ borderRadius: "8px" }}
+            className="no-select"
           >
             <div>求职岗位：{i.post}</div>
             <div>掌握技能：{i.info}</div>

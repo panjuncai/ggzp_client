@@ -47,3 +47,7 @@ brew uninstall mongodb/brew/mongodb-community@6.0
 将这种状态恢复到给定的时间点（即时间旅行调试）对你是否有价值？
 要缓存数据（即，如果数据已经存在，则使用它的状态而不是重新请求它）？
 否希望在热重载视图组件（交换时可能会丢失其内部状态）时保持此数据一致？
+
+# 三段布局
+https://github.com/lulujianglab/flex-headerBar_footerBar
+坑点：得把container部署到<div id='root'></div>节点上才能生效

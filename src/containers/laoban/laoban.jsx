@@ -7,6 +7,7 @@ import { reqAllLaobans } from "../../api";
 import { useState, useEffect } from "react";
 import { processQueryChatMsgs, resetStatus } from "../../redux/chatSlice";
 import { useSelector } from "react-redux";
+import { processQueryUser } from "../../redux/userSlice";
 
 export default () => {
   const [laobans, setLaobans] = useState([]);
@@ -31,6 +32,7 @@ export default () => {
               // 拿不到用户信息也要完成初始化
               setIsInit(true);
             });
+
         } else {
           // 拿不到cookie中的用户信息，也完成了初始化
           setIsInit(true);
@@ -80,6 +82,7 @@ export default () => {
             title={i.username}
             style={{ borderRadius: "8px" }}
             onClick={()=>handleChat(i._id,i.header,i.username)}
+            className="no-select"
           >
             <div>岗位：{i.post}</div>
             <div>公司：{i.company}</div>

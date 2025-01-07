@@ -11,10 +11,10 @@ export default function ajax(url = "", data = {}, type = "GET") {
       dataStr = dataStr.substring(0, dataStr.lastIndexOf("&"));
       url = url + "?" + dataStr;
     } // 发送 get 请求
-    return axios.get(url);
+    return axios.get('/api'+url);
   } else {
     // 发送 post 请求
     // console.log(`axios url is ${url}`)
-    return axios.post(url, data); // data: 包含请求体数据的对象
+    return axios.post('/api'+url, data); // data: 包含请求体数据的对象
   }
 }

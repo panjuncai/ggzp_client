@@ -99,7 +99,7 @@ export const userSlice = createSlice({
         // console.log(`query user action is ${JSON.stringify(action)}`);
         if (action.payload.code === 0) {
           state.user.username =
-            action.payload.data.username ?? state.user.username;
+          action.payload.data.username ?? state.user.username;
           state.user.type = action.payload.data.type ?? state.user.type;
           state.user.header = action.payload.data.header ?? state.user.header;
           state.user.info = action.payload.data.info ?? state.user.info;

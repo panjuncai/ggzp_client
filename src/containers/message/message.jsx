@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { List, Image} from "antd-mobile";
+import { List, Image } from "antd-mobile";
 import { useSelector } from "react-redux";
 import Cookies from "js-cookie";
 import { nanoid } from "@reduxjs/toolkit";
@@ -10,7 +10,7 @@ export default () => {
   const { chat } = chatData;
   const [chatList, setChatList] = useState([]);
   const userid = Cookies.get("userid");
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   // 这里只是处理一下消息分组，redux里面数据已经在首页取过了
   useEffect(() => {
@@ -65,14 +65,22 @@ export default () => {
           }
           arrowIcon={true}
           onClick={() => {
-            console.log(`chat user ${JSON.stringify(i)}`)
-            navigate('/chat',{state:{toId:i.from === userid
-                ? chat.users[i.to]._id
-                : chat.users[i.from]._id,toHeader:i.from === userid
-                ? chat.users[i.to].header
-                : chat.users[i.from].header,toUserName:i.from === userid
-              ? chat.users[i.to].username
-              : chat.users[i.from].username}})
+            // console.log(
+            //   `chat user ${JSON.stringify(i)} and userid is ${userid}`
+            // );
+            navigate("/chat", {
+              state: {
+                toId: i.from === userid ? i.to : i.from,
+                toHeader:
+                  i.from === userid
+                    ? chat.users[i.to].header
+                    : chat.users[i.from].header,
+                toUserName:
+                  i.from === userid
+                    ? chat.users[i.to].username
+                    : chat.users[i.from].username,
+              },
+            });
           }}
         >
           {i.last_content}

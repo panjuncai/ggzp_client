@@ -82,7 +82,7 @@ export default () => {
   }
 
   return (
-    <div className='container'>
+    <div className='container2'>
       <Logo />
       <Space align="center">
         <Form layout="horizontal" autoComplete="off" footer={footer}>

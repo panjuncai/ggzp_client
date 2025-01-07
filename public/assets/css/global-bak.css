@@ -1,0 +1,53 @@
+.flex {
+    display: flex;
+    /* 兼容性 */
+    display:-webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+}
+
+.direction-column {
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -moz-box-orient:vertical;
+    -moz-box-direction:normal;
+    flex-direction: column;
+    -webkit-flex-direction:column;
+}
+
+.content-space-between {
+    justify-content: space-between;
+    -webkit-justify-content:space-between;
+    -moz-box-pack:space-between;
+    -moz-box-pack:space-between;
+    box-pack:space-between;
+}
+
+.content-space-around {
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+    -moz-box-pack: space-around;
+    -moz-box-pack: space-around;
+    box-pack: space-around;
+}
+
+.content-center {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.items-center {
+    align-items: center;
+    -webkit-align-items:center;
+    box-align:center;
+    -moz-box-align:center;
+    -webkit-box-align:center;
+}
+
+.flex-col {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}

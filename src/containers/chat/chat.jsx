@@ -1,7 +1,7 @@
 import React, { useRef, useMemo } from "react";
 import { Bubble, Sender } from "@ant-design/x";
 import { Flex } from "antd";
-import { Avatar, NavBar } from "antd-mobile";
+import { Avatar, NavBar,Dialog } from "antd-mobile";
 import { XProvider } from "@ant-design/x";
 import { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -21,7 +21,8 @@ export default () => {
   const { toId, toHeader, toUserName } = state || {};
   const userid = Cookies.get("userid");
   const user = useSelector((state) => state.user.user);
-  const socket = useMemo(() => io("http://localhost:4000"), []);
+  const add=process.env.REACT_APP_SOCKET_URL;
+  const socket = useMemo(() => io(process.env.REACT_APP_SOCKET_URL||"http://localhost:4000"), []);
   const messagesEndRef = useRef(null);
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "instant" });
@@ -37,8 +38,6 @@ export default () => {
   // from p1 to 张三
   // chat打开时，from=张三 && to=p1 或者 from=p1 && to=张三
   useEffect(() => {
-    // console.log(`chats are ${JSON.stringify(chats)}`);
-    // console.log(`useEffect 1`)
     const processChats = chats
       .filter(
         (i) =>
@@ -141,7 +140,7 @@ export default () => {
             <div ref={messagesEndRef} />
           </Flex>
         </div>
-        <div style={{ padding: "1rem" }}>
+        <div className="bottom" style={{ padding: "1rem"}}>
           {/* {renderSend({
             variant: "text",
             color: "primary",
@@ -161,7 +160,6 @@ export default () => {
               setValue("");
               scrollToBottom();
             }}
-            allowSpeech
           />
         </div>
       </div>

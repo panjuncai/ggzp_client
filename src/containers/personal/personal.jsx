@@ -22,26 +22,26 @@ export default () => {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user.user);
   const userStatus = useSelector((state) => state.user.status);
-  const [isInit, setIsInit] = useState(false);
+  // const [isInit, setIsInit] = useState(false);
 
-  // 通过是否初始化，
-  useEffect(() => {
-    if (userid) {
-      // dispatch(processQueryUser())
-      //   .then(() => {
-      //     // 拿到用户信息后，初始化完成
-      //     setIsInit(true);
-      //   })
-      //   .catch(() => {
-      //     // 拿不到用户信息也要完成初始化
-      //     setIsInit(true);
-      //   });
-          setIsInit(true);
-    } else {
-      // 拿不到cookie中的用户信息，也完成了初始化
-      setIsInit(true);
-    }
-  }, [userid, dispatch]);
+  // 通过userid拿一次用户信息
+  // useEffect(() => {
+  //   if (userid) {
+  //     dispatch(processQueryUser())
+  //       .then(() => {
+  //         // 拿到用户信息后，初始化完成
+  //         setIsInit(true);
+  //       })
+  //       .catch(() => {
+  //         // 拿不到用户信息也要完成初始化
+  //         setIsInit(true);
+  //       });
+  //         setIsInit(true);
+  //   } else {
+  //     // 拿不到cookie中的用户信息，也完成了初始化
+  //     setIsInit(true);
+  //   }
+  // }, [userid, dispatch]);
 
   // 监听userStatus,给出提示
   useEffect(() => {
@@ -87,10 +87,10 @@ export default () => {
     navigate("/login", { replace: true });
   };
 
-  const handleDeleteUser = () => {
-    // Cookies.remove("userid");
-    dispatch(processDeleteUser());
-  };
+  // const handleDeleteUser = () => {
+  //   // Cookies.remove("userid");
+  //   dispatch(processDeleteUser());
+  // };
 
   const gotoUpdateInfo = () => {
     if (user.type === "laoban") {
@@ -103,10 +103,10 @@ export default () => {
   };
 
   // 1.如果还未初始化，先显示Loading
-  if (!isInit) {
-    // 这里可以放骨架屏,todo...
-    return null;
-  }
+  // if (!isInit) {
+  //   // 这里可以放骨架屏,todo...
+  //   return null;
+  // }
 
   // 2.如果没有userid，说明还没登录，跳转到登录
   if (!userid) {
@@ -114,7 +114,7 @@ export default () => {
   }
 
   return (
-    <>
+    <div style={{padding:'1rem'}} className="no-select">
       <Space block direction="vertical" justify="center" align="center">
         <Avatar
           src={`/assets/images/${user.header}.png`}
@@ -146,7 +146,7 @@ export default () => {
           </>
         )}
       </List>
-      <Space justify="center" block>
+      <Space direction='vertical' block>
         <Button block size="large" color="primary" onClick={gotoUpdateInfo}>
           修改资料
         </Button>
@@ -165,7 +165,7 @@ export default () => {
         >
           退出登录
         </Button>
-        <Button
+        {/* <Button
           block
           size="large"
           color="danger"
@@ -200,8 +200,8 @@ export default () => {
           }}
         >
           注销用户
-        </Button>
+        </Button> */}
       </Space>
-    </>
+    </div>
   );
 };

@@ -1,0 +1,97 @@
+/* 清除手机上的一些基本样式 */
+html {
+	width:100%;
+	height:100%;
+	-webkit-font-smoothing:antialiased;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #ededed;
+    overflow-x: hidden;
+    user-select:none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+i, em, b {
+	font-style:normal;
+	font-weight:normal;
+}
+
+:-moz-placeholder {color:#ccc;}
+::-moz-placeholder {color:#ccc;}
+::-webkit-textarea-placeholder {color:#ccc;}
+:-ms-textarea-placeholder {color:#ccc;}
+
+
+img{
+	width:100%;
+	vertical-align:top;
+}
+input,textarea,select{
+	appearance:none;
+	font-size:1.2rem;
+	border:0;
+	background:transparent;
+	font-family:"黑体","Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+	outline:none;
+}
+input,a,span{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* -------------顶部固定开始------------------------------------ */
+/* flex最外框 */
+.container {
+    height:100%;
+    font-size: 0.752rem;
+}
+/* flex头部 */
+.headerBox {
+    height: 1.952rem;
+    width: 100%;
+    background-color: #282828;
+    line-height: 1.952rem;
+    color: #fff;
+    padding: 0.496rem 0;
+    justify-content: center;
+}
+/* -------------------------------顶部固定结束--------------------------- */
+
+/* ------------------------------内容区-------------------------------- */
+.content{
+    position:relative;
+
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+    flex:1;
+    
+	overflow:auto;
+    -webkit-overflow-scrolling:touch;
+    overflow-x: hidden;
+    /* margin-top: 1.22rem;  */
+}
+/* ------------------------------内容区结束------------------------------- */
+
+/* -------------------------------底部固定开始----------------------------- */
+.footerBox {
+    overflow: hidden;
+    height: 1.952rem;
+    width: 100%;
+    text-align: center;
+    background-color: #282828;
+    line-height: 1.952rem;
+    color: #fff;
+}
+.foot-nav *{
+    display: block;
+}
+/* -------------------------------底部固定结束------------------------------ */

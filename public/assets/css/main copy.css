@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f9ff;
+}
+
+:root {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+:root:root {
+  --adm-color-primary: #10c6b1;
+}
+
+/* -------------顶部固定开始------------------------------------ */
+/* flex最外框 */
+.container {
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+}
+/* flex头部 */
+.headerBox {
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* height: 1.952rem; */
+  /* width: 100%; */
+  /* line-height: 1.952rem; */
+  /* padding: 0.496rem 0; */
+}
+/* -------------------------------顶部固定结束--------------------------- */
+
+/* ------------------------------内容区-------------------------------- */
+.content {
+  position: relative;
+  flex: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+}
+/* ------------------------------内容区结束------------------------------- */
+
+/* -------------------------------底部固定开始----------------------------- */
+.footerBox {
+  display: flex;
+  /* overflow: hidden; */
+  /* height: 1.952rem; */
+  width: 100%;
+  /* text-align: center; */
+  /* line-height: 1.952rem; */
+}
+.foot-nav * {
+  display: block;
+}
+
+.flex-col {
+  flex: 1;
+}
+/* -------------------------------底部固定结束------------------------------ */
