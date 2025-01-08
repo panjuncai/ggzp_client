@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import logo from './logo2.png'
+import logo from './logo3.png'
 import './logo.sass'
 
 export default class Logo extends Component{

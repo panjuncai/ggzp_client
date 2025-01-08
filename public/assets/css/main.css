@@ -21,14 +21,22 @@ body {
 }
 
 .container {
-  display:flex;
+  display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.no-select{
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+@media (min-width: 768px) {
+  .container {
+    width: 61.8%; /* 设置为黄金分割比例 */
+    margin: 0 auto; /* 居中对齐 */
+    border:solid 1px #10c6b1
+  }
+}
+
+.no-select {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }

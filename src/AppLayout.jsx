@@ -78,7 +78,7 @@ export default () => {
         <>
           <div className="top">
             <NavBar back="" backIcon={false}>
-              Boss直聘
+            Happy Work
             </NavBar>
           </div>
           <div className="body">

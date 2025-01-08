@@ -111,7 +111,6 @@ export default () => {
 
   return (
     <XProvider theme={{ token: { colorPrimary: "#10c6b1" } }}>
-      <div className="app">
         <div className="top">
           <NavBar back="" backIcon={true} onBack={back}>
             {toUserName}
@@ -140,7 +139,7 @@ export default () => {
             <div ref={messagesEndRef} />
           </Flex>
         </div>
-        <div className="bottom" style={{ padding: "1rem"}}>
+        <div className="bottom" style={{ padding: "0.5rem",borderTop:'none'}}>
           {/* {renderSend({
             variant: "text",
             color: "primary",
@@ -162,7 +161,6 @@ export default () => {
             }}
           />
         </div>
-      </div>
     </XProvider>
   );
 };

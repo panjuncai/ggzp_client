@@ -8,7 +8,7 @@ export default ()=>{
     const gridHeader =icon?<p>已选择头像：<img src={icon} alt='header' /></p>:'请选择头像'
 
     useEffect(() => {
-      for(let i=0;i<20;i++){
+      for(let i=0;i<8;i++){
         const text=`头像${i+1}`
         headerList.push({text,icon:require(`../../assets/images/${text}.png`)})
       }

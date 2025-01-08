@@ -118,7 +118,7 @@ export default () => {
       <Space block direction="vertical" justify="center" align="center">
         <Avatar
           src={`/assets/images/${user.header}.png`}
-          style={{ "--size": "128px" }}
+          style={{ "--size": "192px" }}
         />
         <h1>{user.username}</h1>
       </Space>
